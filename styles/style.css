@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px; /* Ширина контейнера соответствует ширине изображений */
+}
+
+.slides {
+    display: flex;
+    width: 500px; /* Ширина контейнера соответствует ширине изображений */
+    height: 500px; /* Высота контейнера соответствует высоте изображений */
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.description {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #fff;
+    position: absolute; /* Позиционирование относительно слайда */
+    bottom: 0; /* Плотно к нижней части слайда */
+    width: 100%; /* Ширина по ширине слайда */
+    text-align: center;
+    opacity: 0; /* Скрыть текст */
+    visibility: hidden; /* Скрыть текст */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Плавное появление и исчезновение текста */
+}
+
+.slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#slide1:checked ~ .slides #img1,
+#slide2:checked ~ .slides #img2,
+#slide3:checked ~ .slides #img3,
+#slide4:checked ~ .slides #img4 {
+    opacity: 1;
+    visibility: visible;
+}
+
+#slide1:checked ~ .slides #img1 .description,
+#slide2:checked ~ .slides #img2 .description,
+#slide3:checked ~ .slides #img3 .description,
+#slide4:checked ~ .slides #img4 .description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px; /* Отступ от слайдов */
+}
+
+.control {
+    width: 15px;
+    height: 15px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.control:hover {
+    border: 2px solid #333; /* Обводка при наведении */
+}
+
+/* Активный кружочек */
+#slide1:checked ~ .controls .control:nth-child(1) {
+    background-color: #717171;
+}
+
+#slide2:checked ~ .controls .control:nth-child(2) {
+    background-color: #717171;
+}
+
+#slide3:checked ~ .controls .control:nth-child(3) {
+    background-color: #717171;
+}
+
+#slide4:checked ~ .controls .control:nth-child(4) {
+    background-color: #717171;
+}
