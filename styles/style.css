@@ -165,12 +165,9 @@ input[type="radio"] {
 }
 
 @media (max-width: 660px) {
-    .container {
-        margin-top: 30%;
-        height: auto;
-    }
+
     .footer_text {
-        height: 6em;
+        height: auto;
     }
     .footer {
         flex-direction: column-reverse;
@@ -178,22 +175,24 @@ input[type="radio"] {
     }
     .controls {
         margin-top: 1em;
+        margin-bottom: 0.5em;
     }
+}
+
+@media (max-width: 500px) {
+.controls {
+    margin-bottom: 0.5em;
+}
 }
 
 @media (max-width: 378px) {
     .container {
-        height: 10em;
+        height: auto;
     }
     .footer_text {
-        height: 7em;
+        height: auto;
     }
 }
 
-@media (max-width: 345px) {
-    .footer_text {
-        height: 8em;
-    }
-}
 
 
