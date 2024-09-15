@@ -34,25 +34,33 @@ input[type="radio"] {
 .container_slide {
     width: 10%;
     height: 100%;
+    background-color: darkgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container_slide img {
-    width: 60%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 1em;
-}
-
-.footer_text {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1em;
-    font-weight: bold;
 }
 
 .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2em;
+    margin-top: 1em;
+}
+
+.footer_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    font-family: cursive;
+    font-weight: bolder;
+    overflow: hidden;
 }
 
 .controls {
@@ -62,9 +70,9 @@ input[type="radio"] {
 
 .control {
     margin: 0.3em;
-    width: 1em;
-    height: 1em;
-    border: 0.1em solid whitesmoke;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.1em solid rgb(73, 12, 12);
     background-color: rgb(82, 85, 85);
     border-radius: 50%;
     cursor: pointer;
@@ -72,7 +80,7 @@ input[type="radio"] {
 }
 
 .control:hover {
-    background-color: whitesmoke;
+    background-color: rgb(129, 234, 222);
 }
 
 #slide1:checked ~ .container {
@@ -92,40 +100,40 @@ input[type="radio"] {
 }
 
 .text {
+    display: none;
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 #slide1:checked ~ .footer .footer_text #text1,
 #slide2:checked ~ .footer .footer_text #text2,
 #slide3:checked ~ .footer .footer_text #text3,
 #slide4:checked ~ .footer .footer_text #text4 {
+    display: block;
     opacity: 1;
-    transform: translateY(0);
 }
 
-#slide1:not(:checked) ~ .footer .footer_text #text1,
-#slide2:not(:checked) ~ .footer .footer_text #text2,
-#slide3:not(:checked) ~ .footer .footer_text #text3,
-#slide4:not(:checked) ~ .footer .footer_text #text4 {
-    opacity: 0;
-    transform: translateY(20px);
+#slide1:checked ~ .footer .footer_text #text1,
+#slide2:checked ~ .footer .footer_text #text2,
+#slide3:checked ~ .footer .footer_text #text3,
+#slide4:checked ~ .footer .footer_text #text4 {
+    display: block;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
-
 #slide1:checked ~ .footer .controls label[for="slide1"],
 #slide2:checked ~ .footer .controls label[for="slide2"],
 #slide3:checked ~ .footer .controls label[for="slide3"],
 #slide4:checked ~ .footer .controls label[for="slide4"] {
     background-color: transparent; 
-    border: 0.1em solid rgb(94, 129, 26); 
+    border: 0.1em solid rgb(0, 0, 0); 
 }
 
 #slide1:checked ~ .footer .controls label[for="slide1"]:hover,
 #slide2:checked ~ .footer .controls label[for="slide2"]:hover,
 #slide3:checked ~ .footer .controls label[for="slide3"]:hover,
 #slide4:checked ~ .footer .controls label[for="slide4"]:hover {
-    border: 0.1em solid whitesmoke;
+    border: 0.2em solid rgb(42, 80, 218);
 }
 
 @media (min-width: 1025px) {
@@ -138,6 +146,9 @@ input[type="radio"] {
     .container {
         height: 23em;
     }
+    .footer_text {
+        height: 4em;
+    }
 }
 
 @media (max-width: 768px) {
@@ -148,29 +159,19 @@ input[type="radio"] {
     .footer_text {
         font-size: 0.9em;
     }
+    .control {
+        width: 1em;
+        height: 1em;
+    }
 }
 
 @media (max-width: 660px) {
     .container {
         margin-top: 30%;
-        height: 17em;
-    }
-}
-
-@media (max-width: 500px) {
-    .container {
-        margin-top: 40%;
-        height: 13em;
+        height: auto;
     }
     .footer_text {
-        text-align: center;
-        font-size: 0.8em;
-        margin-top: 2em;
-    }
-    .control {
-        margin: 0.2em;
-        width: 0.8em;
-        height: 0.8em;
+        height: 5em;
     }
     .footer {
         flex-direction: column-reverse;
@@ -182,22 +183,9 @@ input[type="radio"] {
         height: 10em;
     }
     .footer_text {
+        height: 6em;
         font-size: 0.7em;
-    }
-    .container_slide img {
-        border: 0.1em solid rgb(174, 239, 239);
-        border-radius: 1em;
     }
 }
 
-@media (max-width: 320px) {
-    .container {
-        margin-top: 60%;
-        height: 8em;
-    }
-    .control {
-        margin: 0.2em;
-        width: 0.7em;
-        height: 0.7em;
-    }
-}
+
