@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Слайдер</title>
+    <link rel="stylesheet" href="./styles/style.css" />
 </head>
 <body>
-    
+    <div class="slider_container">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+        <div class="container">
+            <div class="container_slide" id="img1">
+                <img src="./assets/1.jpg" alt="Image 1">
+            </div>
+            <div class="container_slide" id="img2">
+                <img src="./assets/2.jpg" alt="Image 2">
+            </div>
+            <div class="container_slide" id="img3">
+                <img src="./assets/3.jpg" alt="Image 3">
+            </div>
+            <div class="container_slide" id="img4">
+                <img src="./assets/4.jpg" alt="Image 4">
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer_text">
+                <div class="text" id="text1">Почему мой код не работает? Я следовала всем инструкциям, кроме тех, что были в примечаниях!</div>
+                <div class="text" id="text2">А у меня тут баг, который ловит баги... Похоже, это бесконечный цикл.</div>
+                <div class="text" id="text3">Всё будет хорошо, если я смогу это отладить до рассвета.</div>
+                <div class="text" id="text4">Ошибка компиляции: 'Это не баг, это фича!'</div>
+            </div>
+            <div class="controls">
+                <label for="slide1" class="control"></label>
+                <label for="slide2" class="control"></label>
+                <label for="slide3" class="control"></label>
+                <label for="slide4" class="control"></label>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
